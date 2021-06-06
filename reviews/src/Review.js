@@ -9,17 +9,20 @@ const Review = () => {
 
   const increaseIndex = () => {
     const currentIndex = index
-    setIndex(currentIndex+1)
+    currentIndex === data.length-1 ? setIndex(0) :  setIndex(currentIndex+1)
   }
   const decreaseIndex = () => {
     const currentIndex = index
-    setIndex(currentIndex-1)
+    currentIndex === 0 ? setIndex(data.length-1) : setIndex(currentIndex-1)
   }
-
+  const randomIndex = () => {
+    const newIndex = Math.floor(Math.random()*(data.length))
+    setIndex(newIndex)
+  }
   return (
     <article className='review'>
       <div className='img-container'>
-        <img src={image} alt={name} class='person-img' />
+        <img src={image} alt={name} className='person-img' />
         <span className='quote-icon'>
           <FaQuoteRight />
         </span>
@@ -34,7 +37,7 @@ const Review = () => {
         <FaChevronRight/>
       </button>
       <div>
-        <button className='random-btn'>surprise me</button>
+        <button className='random-btn' onClick={() => randomIndex()}>surprise me</button>
       </div>
 
     </article>
