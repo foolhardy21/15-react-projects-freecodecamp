@@ -16,7 +16,9 @@ const Review = () => {
     currentIndex === 0 ? setIndex(data.length-1) : setIndex(currentIndex-1)
   }
   const randomIndex = () => {
-    const newIndex = Math.floor(Math.random()*(data.length))
+    let newIndex = Math.floor(Math.random()*(data.length))
+    if(newIndex === index) newIndex++
+    if(newIndex === data.length) newIndex=0
     setIndex(newIndex)
   }
   return (
