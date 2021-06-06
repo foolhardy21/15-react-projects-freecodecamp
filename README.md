@@ -4,4 +4,6 @@ This repository is a collection of [React Projects](https://www.youtube.com/watc
 
 ## Topics Learnt in Respective Project
 
-### useState - [Birthday Reminder](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/birthday-reminder)
+ useState - [Birthday Reminder](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/birthday-reminder)
+
+ useState, useEffect, Conditional Rendering - [Tours](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/tours)
