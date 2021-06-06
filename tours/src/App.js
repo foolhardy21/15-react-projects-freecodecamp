@@ -33,7 +33,7 @@ const App = () => {
   }
   return (
     <main>
-      <Tours />
+      <Tours tours={tours}/>
     </main>
   );
 }
