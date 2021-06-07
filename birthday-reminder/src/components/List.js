@@ -3,17 +3,16 @@ import Person from './Person'
 
 const List = ({people}) => {
 
-
  return (
-   <>
-    {people.map(person => {
+
+    people.map(person => {
 
       return (
-        <Person person={person} />
+        <Person key={person.id} person={person} />
       )
 
-    })}
-   </>
+    })
+
  )
 }
 
