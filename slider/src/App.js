@@ -7,6 +7,20 @@ const App = () => {
   const [people, setPeople] = useState(data)
   const [index, setIndex] = useState(0)
 
+  function increaseIndex() {
+    let newIndex = -1;
+    if(index === people.length-1) newIndex=0;
+    else newIndex=index+1
+
+    setIndex(newIndex)
+  }
+  function decreaseIndex() {
+    let newIndex = -1;
+    if(index === 0) newIndex=people.length-1;
+    else newIndex=index-1
+
+    setIndex(newIndex)
+  }
   return (
     <section className='section'>
       <div className='title'>
@@ -17,8 +31,15 @@ const App = () => {
           people.map((person,personIndex) => {
             const { id, image, name, title, quote } = person
             //console.log(name)
+            let position = 'nextSlide'
+            if(personIndex === index) {
+              position='activeSlide'
+            }
+            if(personIndex === index-1 || (personIndex === people.length-1 && index===0)) {
+              position = 'lastSlide'
+            }
             return (
-              <article key={id}>
+              <article key={id} className={position}>
                 <img src={image} alt={name} className='person-img' />
                 <h4>{name}</h4>
                 <p className='title'>{title}</p>
@@ -28,8 +49,8 @@ const App = () => {
             )
           })
         }
-        <button className='prev'><FiChevronLeft/></button>
-        <button className='next'><FiChevronRight/></button>
+        <button className='prev' onClick={decreaseIndex}><FiChevronLeft/></button>
+        <button className='next' onClick={increaseIndex}><FiChevronRight/></button>
       </div>
     </section>
   );
