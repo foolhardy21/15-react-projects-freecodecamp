@@ -30,11 +30,11 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Media Query
-- React Hooks (useState)
+- React Hooks (useState, useEffect)
 - React Icons
 - Conditional Rendering
 - JS custom className
 
 ### What I learned
 
-I learnt how the content to be rendered is changed using a state variable depending on the condition. I learnt the use of react-icons library. I also learnt how JS is used to style the element with CSS default classes.
+I learnt how the content to be rendered is changed using a state variable depending on the condition. I learnt how the data is fetched from the URL using the async/await keywords. I learnt the use of react-icons library. I also learnt how JS is used to style the element with CSS default classes.
