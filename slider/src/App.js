@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { FaQuoteRight } from 'react-icons/fa'
 import data from './data'
@@ -21,6 +21,11 @@ const App = () => {
 
     setIndex(newIndex)
   }
+  useEffect(() => {
+    setInterval(() => {
+      increaseIndex()
+    },3000)
+  },[index])
   return (
     <section className='section'>
       <div className='title'>
