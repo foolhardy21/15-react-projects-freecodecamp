@@ -8,6 +8,18 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const countInt = parseInt(count)
+    if(countInt>0) {
+      setText(data.slice(0,countInt))
+    } else if (countInt === 0) {
+      setText([])
+    } else if (countInt > data.length) {
+      setText(data)
+    } else {
+      setText(data.slice(0,1))
+    }
+
+
   }
   const changeCount = (e) => setCount(e.target.value)
 
@@ -22,12 +34,13 @@ const App = () => {
           id='amount'
           className='input'
           onChange={changeCount}
-          // value={count}
         />
         <button type='submit' className='btn'>generate</button>
       </form>
       <article className='lorem-text'>
-        <p>sample text kasdfsadhljdsvhj</p>
+        {text.map((item,index) => {
+          return <p key={index}>{item}</p>
+        })}
       </article>
     </section>
   );
