@@ -12,6 +12,10 @@ const App = () => {
   const [name,setName] = useState('')
   const [list,setList] = useState([])
 
+  const removeItem = (id) => {
+    showAlert(true,'Item deleted','danger')
+    setList(list.filter(item => item.id !== id))
+  }
   const removeItems = () => {
     setList([])
     showAlert(true,'All Items Removed','danger')
@@ -56,7 +60,7 @@ const App = () => {
         </div>
       </form>
       <div className='grocery-container'>
-        <List items={list} />
+        <List items={list} removeItem={removeItem}/>
         {
           list.length > 0 &&
           <button
