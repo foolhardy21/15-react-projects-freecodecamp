@@ -1,8 +1,13 @@
 import React, {useEffect} from 'react'
 
-const Alert = () => {
+const Alert = ({msg,type,hideAlert}) => {
 
-  return <h2>Alert component</h2>
+  useEffect(() => {
+    setTimeout(() => hideAlert(),2000)
+  },[])
+  
+  return <p className={`alert alert-${type}`}>{msg}</p>
+
 
 }
 

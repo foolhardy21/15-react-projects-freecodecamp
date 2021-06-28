@@ -3,15 +3,22 @@ import Alert from './Alert'
 import List from './List'
 
 const App = () => {
-  const [alert,setAlert] = useState(false)
+  const [alert,setAlert] = useState({
+    show: false,
+    msg: '',
+    type: ''
+  })
   const [isEditing,setIsEditing] = useState(false)
   const [name,setName] = useState('')
   const [list,setList] = useState([])
 
+  const showAlert = (show=false,msg='',type='') => {
+    setAlert({show,msg,type})
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
     if(!name) {
-      //enter name alert
+      showAlert(true,'Type something','danger')
     } else if(name && isEditing) {
       //edit the item
     } else {
@@ -26,7 +33,7 @@ const App = () => {
   return (
     <section className='section-center'>
       <form className='grocery-form' onSubmit={handleSubmit}>
-        {alert && <Alert />}
+        {alert.show && <Alert {...alert} hideAlert={showAlert} />}
         <h3>grocery bud</h3>
         <div className='form-control'>
         <input
