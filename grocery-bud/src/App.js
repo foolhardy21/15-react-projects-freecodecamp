@@ -12,11 +12,16 @@ const App = () => {
   const [name,setName] = useState('')
   const [list,setList] = useState([])
 
+  const removeItems = () => {
+    setList([])
+    showAlert(true,'All Items Removed','danger')
+  }
   const showAlert = (show=false,msg='',type='') => {
     setAlert({show,msg,type})
   }
   const handleSubmit = (e) => {
     e.preventDefault()
+
     if(!name) {
       showAlert(true,'Type something','danger')
     } else if(name && isEditing) {
@@ -28,8 +33,10 @@ const App = () => {
       }
       setList([...list,newItem])
       setName('')
+      showAlert(true,'Item added','success')
     }
   }
+
   return (
     <section className='section-center'>
       <form className='grocery-form' onSubmit={handleSubmit}>
@@ -51,7 +58,10 @@ const App = () => {
       <div className='grocery-container'>
         <List items={list} />
         {
-          list.length > 0 && <button className='clear-btn'>clear items</button>
+          list.length > 0 &&
+          <button
+          className='clear-btn'
+          onClick={removeItems}>clear items</button>
         }
 
       </div>
