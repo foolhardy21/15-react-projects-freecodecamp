@@ -5,10 +5,16 @@ import Values from 'values.js'
 const App = () => {
 
   const [color,setColor] = useState('')
+  const[error,setError] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('submitted')
+
+    try{
+      const colors = new Values(color).all(10)
+    } catch(e) {
+      setError(true)
+    }
   }
 
   return (
@@ -20,7 +26,8 @@ const App = () => {
           type='text'
           value={color}
           onChange={(e) => setColor(e.target.value)}
-          placeholder='Type hex...'/>
+          placeholder='Type hex...'
+          className={`${error ? 'error' : null}`} />
           <button className='btn' type='submit'>submit</button>
         </form>
       </section>
