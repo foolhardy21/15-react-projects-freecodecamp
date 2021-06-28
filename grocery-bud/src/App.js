@@ -11,13 +11,20 @@ const App = () => {
   const [isEditing,setIsEditing] = useState(false)
   const [name,setName] = useState('')
   const [list,setList] = useState([])
+  const [editId, setEditId] = useState(0)
 
+  const editItem = (id) => {
+    setIsEditing(true)
+    setEditId(id.toString())
+    // console.log(itemObj,editId)
+  }
   const removeItem = (id) => {
     showAlert(true,'Item deleted','danger')
     setList(list.filter(item => item.id !== id))
   }
   const removeItems = () => {
     setList([])
+    setName('')
     showAlert(true,'All Items Removed','danger')
   }
   const showAlert = (show=false,msg='',type='') => {
@@ -27,14 +34,31 @@ const App = () => {
     e.preventDefault()
 
     if(!name) {
+
       showAlert(true,'Type something','danger')
+
     } else if(name && isEditing) {
-      //edit the item
+
+      setList(list.map(item => {
+        if(item.id === editId) {
+          return {...item,title:name}
+        } else {
+          return item
+        }
+
+      }))
+
+      showAlert(true,'Item Edited','success')
+      setIsEditing(false)
+      setName('')
+      setEditId(0)
+
     } else {
       const newItem = {
         id: new Date().getTime().toString(),
         title: name
       }
+
       setList([...list,newItem])
       setName('')
       showAlert(true,'Item added','success')
@@ -60,7 +84,7 @@ const App = () => {
         </div>
       </form>
       <div className='grocery-container'>
-        <List items={list} removeItem={removeItem}/>
+        <List items={list} removeItem={removeItem} editItem={editItem}/>
         {
           list.length > 0 &&
           <button
