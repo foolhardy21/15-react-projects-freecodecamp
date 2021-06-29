@@ -3,8 +3,8 @@ import NavBar from './NavBar'
 
 const App = () => {
   return (
-    <div className="App">
-      hello
+    <div>
+      <NavBar />
     </div>
   );
 }
