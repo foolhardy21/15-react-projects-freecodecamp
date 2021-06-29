@@ -17,7 +17,7 @@ const NavBar = () => {
             <FaBars />
           </button>
         </div>
-        <div className='links-container show-container'>
+        <div className={` ${showLinks ? 'links-container show-container' : 'links-container'}`}>
           {showLinks && <ul className='links'>
             {links.map(link => {
               return <li key={link.id}>
