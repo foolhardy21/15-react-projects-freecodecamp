@@ -1,6 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Alert from './Alert'
 import List from './List'
+
+const getLocalStorage = () => {
+  let list = localStorage.getItem('list')
+  if(list) {
+    return JSON.parse(list)
+  } else {
+    return []
+  }
+}
 
 const App = () => {
   const [alert,setAlert] = useState({
@@ -10,13 +19,15 @@ const App = () => {
   })
   const [isEditing,setIsEditing] = useState(false)
   const [name,setName] = useState('')
-  const [list,setList] = useState([])
+  const [list,setList] = useState(getLocalStorage())
   const [editId, setEditId] = useState(0)
 
+  useEffect(() => {
+    localStorage.setItem('list',JSON.stringify(list))
+  },[list])
   const editItem = (id) => {
     setIsEditing(true)
     setEditId(id.toString())
-    // console.log(itemObj,editId)
   }
   const removeItem = (id) => {
     showAlert(true,'Item deleted','danger')
