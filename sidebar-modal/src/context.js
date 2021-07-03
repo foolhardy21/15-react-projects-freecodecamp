@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-
+  
   const [isModalOpen,setIsModalOpen] = useState(false)
   const [isSidebarOpen,setIsSidebarOpen] = useState(false)
 
