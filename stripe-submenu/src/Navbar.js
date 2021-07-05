@@ -5,11 +5,15 @@ import { AppContext } from './context'
 
 const NavBar = () => {
 
-  const {openSidebar, openSubmenu, closeSubmenu} = useContext(AppContext)
+  const { openSidebar, openSubmenu, closeSubmenu } = useContext(AppContext)
 
   const displayMenu = (e) => {
-    console.log(e.target)
-    openSubmenu()
+    const page = e.target.textContent
+    const tempBtn = e.target.getBoundingClientRect()
+
+    const center = (tempBtn.left+tempBtn.right)/2
+    const bottom = (tempBtn.bottom-3);
+    openSubmenu(page,{ center,bottom })
   }
 
   return (
@@ -23,13 +27,25 @@ const NavBar = () => {
         </div>
         <ul className="nav-links">
           <li>
-            <button className="link-btn" onMouseOver={displayMenu}>products</button>
+            <button
+            className="link-btn"
+            onMouseOver={displayMenu}
+            onMouseLeave={closeSubmenu}
+            >products</button>
           </li>
           <li>
-            <button className="link-btn" onMouseOver={displayMenu}>developers</button>
+            <button
+            className="link-btn"
+            onMouseOver={displayMenu}
+            onMouseLeave={closeSubmenu}
+            >developers</button>
           </li>
           <li>
-            <button className="link-btn" onMouseOver={displayMenu}>company</button>
+            <button
+            className="link-btn"
+            onMouseOver={displayMenu}
+            onMouseLeave={closeSubmenu}
+            >company</button>
           </li>
         </ul>
         <button className="btn signin-btn" onMouseOver={displayMenu}>sign in</button>
