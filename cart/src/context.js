@@ -33,7 +33,7 @@ const AppProvider = ({ children }) => {
     const newCart = cart.map((item) => {
       const {id,title,price,img,amount} = item
 
-      if(id == itemId) {
+      if(id == itemId && amount > 0 ) {
         return {...item, amount: amount - 1}
       } else {
         return item
