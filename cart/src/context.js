@@ -10,8 +10,13 @@ const AppProvider = ({ children }) => {
 
   const [cart, setCart] = useState(cartItems)
 
+  const removeItem = (id) => {
+    const newCart = cart.filter(item => item.id !== id )
+    setCart(newCart)
+  }
+
   return (
-    <AppContext.Provider value={{cart}}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{cart, removeItem}}>{children}</AppContext.Provider>
   )
 }
 

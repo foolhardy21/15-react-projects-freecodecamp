@@ -5,6 +5,13 @@ import { AppContext } from './context'
 const CartContainer = () => {
   const { cart } = useContext(AppContext)
 
+  const getTotalPrice = () => {
+    const total = cart.reduce((acc,current) => {
+      return acc + (current.price*current.amount)
+    },0)
+    return total
+  }
+
   if(cart.length === 0) {
     return (
       <section className="cart">
@@ -30,7 +37,7 @@ const CartContainer = () => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>3999</span>
+            total <span>{ getTotalPrice() }</span>
           </h4>
         </div>
         <button
