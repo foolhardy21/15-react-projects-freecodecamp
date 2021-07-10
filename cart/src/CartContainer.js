@@ -3,7 +3,7 @@ import CartItem from './CartItem'
 import { AppContext } from './context'
 
 const CartContainer = () => {
-  const { cart, total } = useContext(AppContext)
+  const { cart, total, clearCart } = useContext(AppContext)
 
   if(cart.length === 0) {
     return (
@@ -35,7 +35,7 @@ const CartContainer = () => {
         </div>
         <button
         className="btn clear-btn"
-        onClick={() => console.log('clear cart')}
+        onClick={() => clearCart()}
         >
           clear cart
         </button>
