@@ -3,7 +3,7 @@ import CartItem from './CartItem'
 import { AppContext } from './context'
 
 const CartContainer = () => {
-  const { cart } = useContext(AppContext)
+  const { cart, total } = useContext(AppContext)
 
   if(cart.length === 0) {
     return (
@@ -30,7 +30,7 @@ const CartContainer = () => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>$ 0.00</span>
+            total <span>$ {total}</span>
           </h4>
         </div>
         <button
