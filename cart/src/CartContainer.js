@@ -3,14 +3,7 @@ import CartItem from './CartItem'
 import { AppContext } from './context'
 
 const CartContainer = () => {
-  const { cart, removeAllItems } = useContext(AppContext)
-
-  const getTotalPrice = () => {
-    const total = cart.reduce((acc,current) => {
-      return acc + (current.price*current.amount)
-    },0)
-    return total
-  }
+  const { cart } = useContext(AppContext)
 
   if(cart.length === 0) {
     return (
@@ -37,12 +30,12 @@ const CartContainer = () => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>{ getTotalPrice() }</span>
+            total <span>$ 0.00</span>
           </h4>
         </div>
         <button
         className="btn clear-btn"
-        onClick={() => removeAllItems()}
+        onClick={() => console.log('clear cart')}
         >
           clear cart
         </button>
