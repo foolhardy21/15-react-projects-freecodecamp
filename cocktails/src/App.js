@@ -9,6 +9,7 @@ import Error from './pages/Error'
 import Navbar from './components/Navbar'
 
 const App = () => {
+  
   return (
     <Router>
       <Navbar />
@@ -28,6 +29,7 @@ const App = () => {
       </Switch>
     </Router>
   );
+
 }
 
 export default App;
