@@ -1,4 +1,4 @@
-# Freecodecamp - Accordian
+# Accordian
 
 
 ## Table of contents

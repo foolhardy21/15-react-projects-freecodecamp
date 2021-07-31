@@ -1,4 +1,4 @@
-# Freecodecamp - Birthday Reminder
+# Birthday Reminder
 
 
 ## Table of contents
