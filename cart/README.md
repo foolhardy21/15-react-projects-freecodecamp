@@ -34,16 +34,26 @@ Users should be able to:
 ### What I learned
 
 I learnt how the context is created using 
-``` const AppContext  = React.createContext() ``` 
-and it is passed in the root component to be used by children components using 
-``` import { AppProvider } from './context'
 
+```javascript 
+const AppContext  = React.createContext()
+``` 
+
+and it is passed in the root component to be used by children components using 
+
+```javascript
+import { AppProvider } from './context'
 ReactDOM.render(
   <AppProvider>
     <App />
   </AppProvider>,
   document.getElementById('root')
-); ```.
+); 
+```
 Along with this, i learnt how useReducer is used as follows 
-``` const [state, dispatch] = useReducer(reducer, initialState) ``` 
+
+```javascript
+const [state, dispatch] = useReducer(reducer, initialState) 
+``` 
+
 and about the reducer.js file which deals with the state management depending on the action type. 

@@ -6,51 +6,47 @@ This repository is a collection of [React Projects](https://github.com/john-smil
 
 * useState 
 
- [Birthday Reminder](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/birthday-reminder)
+1. [Birthday Reminder](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/birthday-reminder)
 
 
 * useEffect, Conditional Rendering 
 
- [Tours](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/tours)
+1. [Tours](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/tours)
+1. [Reviews](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/reviews)
+ 
+1. [Accordian](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/accordian)
+ 
+1. [Menu](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/menu)
+ 
+1. [Tabs](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/tabs)
 
- [Reviews](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/reviews)
- 
- [Accordian](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/accordian)
- 
- [Menu](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/menu)
- 
- [Tabs](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/tabs)
-
- [Slider](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/slider)
+1. [Slider](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/slider)
 
 
  * Forms
  
- [Lorem Ipsum Generator](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/lorem-ipsum)
-
- [Color Shades Generator](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/color-gen)
-
- [Grocery Bud](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/grocery-bud)
+1. [Lorem Ipsum Generator](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/lorem-ipsum)
+1. [Color Shades Generator](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/color-gen)
+1. [Grocery Bud](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/grocery-bud)
 
 
  * useRef
- [NavBar](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/navbar)
+
+1. [NavBar](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/navbar)
 
 
  * useContext
- [Modal and Sidebar](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/sidebar-modal)
 
- [Stripe Submenus](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/stripe-submenu)
+1. [Modal and Sidebar](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/sidebar-modal)
+1. [Stripe Submenus](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/stripe-submenu)
 
 
  * useReducer and useContext
  
- [Cart](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/cart)
+1. [Cart](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/cart)
 
 
  * React Router and useCallback
  
- [Cocktails](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/cocktails)
-
-
+1. [Cocktails](https://github.com/foolhardy21/15-react-projects-freecodecamp/tree/main/cocktails)
  
